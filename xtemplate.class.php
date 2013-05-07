@@ -905,12 +905,12 @@ class XTemplate {
      * @access public
      */
 	public function scan_globals () {
+		
+		$GLOB = array();
 
-		reset($GLOBALS);
-
-		foreach ($GLOBALS as $k => $v) {
-			$GLOB[$k] = $v;
-		}
+		$GLOB['_SERVER'] = $_SERVER;
+		$GLOB['_GET'] = $_GET;
+		$GLOB['_POST'] = $_POST;
 
 		/**
 		 * Access global variables as:
